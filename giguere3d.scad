@@ -8,7 +8,9 @@ module element(x=0, z=0, r=0) {
         translate([depth/2 + x*pitch, -depth/2, z*pitch + depth/2]) {
             cube([width, depth, height]);
             rotate([90,0,0]) {
-                text("H");
+                translate([width/2,height/2,0]) {
+                    text("He", 5, halign="center", valign="center");
+                }
             }
         }
     }
