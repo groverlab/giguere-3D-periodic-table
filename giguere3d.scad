@@ -3,26 +3,25 @@
 width = 10;
 height = 10;
 depth = 3;
-pitch = width+depth;
+vspace = 2;
+hspace = 2;
 // $fn = 64;
+textheight = 0;
 
 module element(x=0, y=0, z=0, r=0, front="F", back="B") {
     rotate([0,0,r]) {
-        translate([depth/2 + x*pitch, y*pitch - depth/2, z*pitch + depth/2]) {
+        translate([depth/2 + x*(width+hspace), y*(width+hspace) - depth/2, z*(height+vspace) + depth/2]) {
             cube([width, depth, height]);
-            translate([-1, 1, -1]) {
-                cube([width+2, depth-2, height+2]);
-            }
             rotate([90,0,0]) {
-                translate([width/2,height/2,0]) {
-                    linear_extrude(1) {
+                translate([width/2, height/2, 0]) {
+                    linear_extrude(textheight) {
                         text(front, 5, halign="center", valign="center");
                     }
                 }
             }
             rotate([90,0,180]) {
                 translate([-width/2, height/2, depth]) {
-                    linear_extrude(1) {
+                    linear_extrude(textheight) {
                         text(back, 5, halign="center", valign="center");
                     }
                 }
