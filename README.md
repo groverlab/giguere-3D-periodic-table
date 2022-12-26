@@ -6,4 +6,6 @@ In 1966, Canadian chemist [Paul-Antoine Giguère](https://en.wikipedia.org/wiki/
 
  I wondered if anyone had made a 3D-printable version of Giguère's periodic table and couldn't find one, so I made this using OpenSCAD.  Printed successfully on my Ender 3 using 100% infill and Raft build plate adhesion.
 
+![v1 of my 3D-printed Giguère periodic table](v1.jpeg)
+
 [^1]: Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966).
