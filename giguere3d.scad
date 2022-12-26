@@ -1,12 +1,13 @@
 // Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966)
 
-width = 10;
-height = 10;
+width = 16;
+height = 16;
 depth = 2;
 vspace = 2;
 hspace = 2;
-$fn = 32;
+$fn = 8;
 textheight = 0.5;
+fontsize = 7;
 
 module element(x=0, y=0, z=0, r=0, front="F", back="B") {
     rotate([0,0,r]) {
@@ -18,14 +19,14 @@ module element(x=0, y=0, z=0, r=0, front="F", back="B") {
             rotate([90,0,0]) {
                 translate([width/2, height/2, 0]) {
                     linear_extrude(textheight) {
-                        text(front, 5, halign="center", valign="center");
+                        text(front, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
                     }
                 }
             }
             rotate([90,0,180]) {
                 translate([-width/2, height/2, depth]) {
                     linear_extrude(textheight) {
-                        text(back, 5, halign="center", valign="center");
+                        text(back, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
                     }
                 }
             }
