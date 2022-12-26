@@ -5,7 +5,7 @@ height = 10;
 depth = 2;
 vspace = 2;
 hspace = 2;
-// $fn = 64;
+$fn = 32;
 textheight = 1;
 
 module element(x=0, y=0, z=0, r=0, front="F", back="B") {
