@@ -41,6 +41,16 @@ element(1, 0, 1, 0, "Hf", "Au");
 element(2, 0, 1, 0, "Ta", "Pt");
 element(3, 0, 1, 0, "W", "Ir");
 element(4, 0, 1, 0, "Re", "Os");
+element(0, 0, 2, 0, "Y", "Cd");
+element(1, 0, 2, 0, "Zr", "Ag");
+element(2, 0, 2, 0, "Nb", "Pd");
+element(3, 0, 2, 0, "Mo", "Rh");
+element(4, 0, 2, 0, "Tc", "Ru");
+element(0, 0, 3, 0, "Sc", "Zn");
+element(1, 0, 3, 0, "Ti", "Cu");
+element(2, 0, 3, 0, "V", "Ni");
+element(3, 0, 3, 0, "Cr", "Co");
+element(4, 0, 3, 0, "Mn", "Fe");
 
 // P-block
 element(0, 0, 0, 90, "Nh", "Og");
