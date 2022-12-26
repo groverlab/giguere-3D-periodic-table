@@ -21,6 +21,7 @@ module element(x=0, y=0, z=0, r=0, front="H", back="F") {
     }
 }
 
+// S-block
 element(-1,0,0, 0, "Ra", "Fr");
 element(-1,0,1, 0, "Ba", "Cs");
 element(-1,0,2, 0, "Sr", "Rb");
@@ -29,16 +30,21 @@ element(-1,0,4, 0, "Mg", "Na");
 element(-1,0,5, 0, "Be", "Li");
 element(-1,0,6, 0, "", "H");
 
-
-element(0,0,0, 0, "Ac", "XX");
-element(1,0,0, 0, "Rf", "Au");
-
-element(0,0,1, 0, "La", "Hg");
+// D-block
+element(0, 0, 0, 0, "Ac", "Cn");
+element(1, 0, 0, 0, "Rf", "Rg");
+element(2, 0, 0, 0, "Db", "Ds");
+element(3, 0, 0, 0, "Sg", "Mt");
+element(4, 0, 0, 0, "Bh", "Hs");
+element(0, 0, 1, 0, "La", "Hg");
+element(1, 0, 1, 0, "Hf", "Au");
+element(2, 0, 1, 0, "Ta", "Pt");
+element(3, 0, 1, 0, "W", "Ir");
+element(4, 0, 1, 0, "Re", "Os");
 
 element(0,0,0,90);
 
 // F-block
-
 element(-1, -1, 0, 90, "Lr", "Th");
 element(-2, -1, 0, 90, "No", "Pa");
 element(-3, -1, 0, 90, "Md", "U");
@@ -46,7 +52,6 @@ element(-4, -1, 0, 90, "Fm", "Np");
 element(-5, -1, 0, 90, "Es", "Pu");
 element(-6, -1, 0, 90, "Cf", "Am");
 element(-7, -1, 0, 90, "Bk", "Cm");
-
 element(-1, -1, 1, 90, "Lu", "Ce");
 element(-2, -1, 1, 90, "Yb", "Pr");
 element(-3, -1, 1, 90, "Tm", "Nd");
