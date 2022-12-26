@@ -42,7 +42,27 @@ element(2, 0, 1, 0, "Ta", "Pt");
 element(3, 0, 1, 0, "W", "Ir");
 element(4, 0, 1, 0, "Re", "Os");
 
-element(0,0,0,90);
+// P-block
+element(0, 0, 0, 90, "Nh", "Og");
+element(1, 0, 0, 90, "Fl", "Ts");
+element(2, 0, 0, 90, "Mc", "Lv");
+element(0, 0, 1, 90, "Tl", "Rn");
+element(1, 0, 1, 90, "Pb", "At");
+element(2, 0, 1, 90, "Bi", "Po");
+element(0, 0, 2, 90, "In", "Xe");
+element(1, 0, 2, 90, "Sn", "I");
+element(2, 0, 2, 90, "Sb", "Te");
+element(0, 0, 3, 90, "Ga", "Kr");
+element(1, 0, 3, 90, "Ge", "Br");
+element(2, 0, 3, 90, "As", "Se");
+element(0, 0, 4, 90, "Al", "Ar");
+element(1, 0, 4, 90, "Si", "Cl");
+element(2, 0, 4, 90, "P", "S");
+element(0, 0, 5, 90, "B", "Ne");
+element(1, 0, 5, 90, "C", "F");
+element(2, 0, 5, 90, "N", "O");
+element(0, 0, 6, 90, "", "He");
+
 
 // F-block
 element(-1, -1, 0, 90, "Lr", "Th");
