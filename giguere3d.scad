@@ -1,20 +1,30 @@
+// Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966)
+
 width = 10;
 height = 10;
-depth = 2;
+depth = 3;
 pitch = width+depth;
+// $fn = 64;
 
-module element(x=0, y=0, z=0, r=0, front="H", back="F") {
+module element(x=0, y=0, z=0, r=0, front="F", back="B") {
     rotate([0,0,r]) {
         translate([depth/2 + x*pitch, y*pitch - depth/2, z*pitch + depth/2]) {
             cube([width, depth, height]);
+            translate([-1, 1, -1]) {
+                cube([width+2, depth-2, height+2]);
+            }
             rotate([90,0,0]) {
                 translate([width/2,height/2,0]) {
-                    text(front, 5, halign="center", valign="center");
+                    linear_extrude(1) {
+                        text(front, 5, halign="center", valign="center");
+                    }
                 }
             }
             rotate([90,0,180]) {
                 translate([-width/2, height/2, depth]) {
-                    text(back, 5, halign="center", valign="center");
+                    linear_extrude(1) {
+                        text(back, 5, halign="center", valign="center");
+                    }
                 }
             }
         }
@@ -22,13 +32,13 @@ module element(x=0, y=0, z=0, r=0, front="H", back="F") {
 }
 
 // S-block
-element(-1,0,0, 0, "Ra", "Fr");
-element(-1,0,1, 0, "Ba", "Cs");
-element(-1,0,2, 0, "Sr", "Rb");
-element(-1,0,3, 0, "Ca", "K");
-element(-1,0,4, 0, "Mg", "Na");
-element(-1,0,5, 0, "Be", "Li");
-element(-1,0,6, 0, "", "H");
+element(-1, 0, 0, 0, "Ra", "Fr");
+element(-1, 0, 1, 0, "Ba", "Cs");
+element(-1, 0, 2, 0, "Sr", "Rb");
+element(-1, 0, 3, 0, "Ca", "K");
+element(-1, 0, 4, 0, "Mg", "Na");
+element(-1, 0, 5, 0, "Be", "Li");
+element(-1, 0, 6, 0, "He", "H");
 
 // D-block
 element(0, 0, 0, 0, "Ac", "Cn");
@@ -71,8 +81,6 @@ element(2, 0, 4, 90, "P", "S");
 element(0, 0, 5, 90, "B", "Ne");
 element(1, 0, 5, 90, "C", "F");
 element(2, 0, 5, 90, "N", "O");
-element(0, 0, 6, 90, "", "He");
-
 
 // F-block
 element(-1, -1, 0, 90, "Lr", "Th");
