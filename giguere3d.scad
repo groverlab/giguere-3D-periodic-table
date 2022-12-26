@@ -2,18 +2,18 @@
 
 width = 10;
 height = 10;
-depth = 3;
-vspace = 3;
-hspace = 3;
+depth = 2;
+vspace = 2;
+hspace = 2;
 // $fn = 64;
-textheight = 0.1;
+textheight = 1;
 
 module element(x=0, y=0, z=0, r=0, front="F", back="B") {
     rotate([0,0,r]) {
         translate([depth/2 + x*(width+hspace), y*(width+hspace) - depth/2, z*(height+vspace) + depth/2]) {
             cube([width, depth, height]);
-            translate([-1,1,-1]) {
-                cube([width+2, depth-2, height+2]);
+            translate([-vspace/2, depth/4, -hspace/2]) {
+                cube([width+vspace, depth/2, height+vspace]);
             }
             rotate([90,0,0]) {
                 translate([width/2, height/2, 0]) {
