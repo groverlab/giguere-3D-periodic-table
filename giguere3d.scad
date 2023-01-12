@@ -1,5 +1,6 @@
 // Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966)
 
+aufbau = true;
 width = 16;
 height = 16;
 depth = 2;
