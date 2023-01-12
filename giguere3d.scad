@@ -2,39 +2,40 @@
 
 width = 16;
 height = 16;
-depth = 5;
+depth = 10;
 vspace = 2;
 hspace = 2;
 $fn = 8;
 textheight = 1.5;
 fontsize = 7;
-core = 4;
+core = 3;
+coreheight = (height+vspace)*7;
 
 module element(x=0, z=0, r=0, front="F", back="B") {
-
     rotate([0,0,r]) {
-        translate([x*(width+hspace) + width/2+hspace/2 + sign(x+0.001)*core, 0, z*(height+vspace)]) {
+        translate([x*(width+hspace) + width/2+hspace/2 + sign(x+0.001)*(core+2.5), 0, z*(height+vspace)]) {
             cube([width, depth, height], center=true);
             translate([0, 0, 0]) {
                 cube([width+vspace, depth-4, height+vspace], center=true);
-            }
-            rotate([90,0,0]) {
-                translate([0, 0, depth/2]) {
-                    linear_extrude(textheight) {
-                        text(front, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
-                    }
                 }
-            }
-            rotate([90,0,180]) {
-                translate([0, 0, depth/2]) {
-                    linear_extrude(textheight) {
-                        text(back, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
+                rotate([90,0,0]) {
+                    translate([0, 0, depth/2]) {
+                        linear_extrude(textheight) {
+                            text(front, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
+                            }
+                        }
+                    }
+                    rotate([90,0,180]) {
+                        translate([0, 0, depth/2]) {
+                            linear_extrude(textheight) {
+                                text(back, fontsize, halign="center", valign="center", font="Liberation Sans:style=Bold");
+                            }
+                        }
                     }
                 }
             }
         }
-    }
-}
+    
 
 // S-block
 element(-1, 0, 0, "Ra", "Fr");
@@ -102,5 +103,28 @@ element(-4, 1, 90, "Ho", "Nd");
 element(-5, 1, 90, "Dy", "Pm");
 element(-6, 1, 90, "Tb", "Sm");
 element(-7, 1, 90, "Gd", "Eu");
+
+// Core
+translate([0,0,coreheight/2-(height+vspace)/2]) {
+    cube([core*2, core*2, coreheight], center = true);
+}
+
+translate([-2.5,0,coreheight/2-(height+vspace)/2]) {
+    cube([core*2+2.5, core*2, coreheight], center = true);
+}
+c2 = (height+vspace)*4;
+translate([+2.5,0,c2/2-(height+vspace)/2]) {
+    cube([core*2+2.5, core*2, c2], center = true);
+}
+
+c3 = (height+vspace)*6;
+translate([0,+2.5,c3/2-(height+vspace)/2]) {
+    cube([core*2, core*2+2.5, c3], center = true);
+}
+c4 = (height+vspace)*2;
+translate([0,-2.5,c4/2-(height+vspace)/2]) {
+    cube([core*2, core*2+2.5, c4], center = true);
+}
+
 
 
