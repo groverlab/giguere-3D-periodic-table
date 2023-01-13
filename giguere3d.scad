@@ -1,4 +1,7 @@
-// Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966)
+// A 3D periodic table of the chemical elements, based on Paul Giguère's work [1] and implemented
+// in OpenSCAD by William Grover, wgrover@engr.ucr.edu, https://groverlab.org
+//
+// [1] Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966)
 
 width = 16;
 height = 16;
