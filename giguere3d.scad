@@ -37,7 +37,8 @@ module element(x=0, z=0, r=0, front="F", back="B") {
         }
     
 
-// S-block
+// s-block
+        
 element(-1, 0, 0, "Ra", "Fr");
 element(-1, 1, 0, "Ba", "Cs");
 element(-1, 2, 0, "Sr", "Rb");
@@ -46,7 +47,8 @@ element(-1, 4, 0, "Mg", "Na");
 element(-1, 5, 0, "Be", "Li");
 element(-1, 6, 0, "He", "H");
 
-// D-block
+// d-block
+        
 element(0, 0, 0, "Lw", "Cn");
 element(1, 0, 0, "Rf", "Rg");
 element(2, 0, 0, "Db", "Ds");
@@ -68,7 +70,8 @@ element(2, 3, 0, "V", "Ni");
 element(3, 3, 0, "Cr", "Co");
 element(4, 3, 0, "Mn", "Fe");
 
-// P-block
+// p-block
+
 element(0, 0, 90, "Nh", "Og");
 element(1, 0, 90, "Fl", "Ts");
 element(2, 0, 90, "Mc", "Lv");
@@ -88,7 +91,8 @@ element(0, 5, 90, "B", "Ne");
 element(1, 5, 90, "C", "F");
 element(2, 5, 90, "N", "O");
 
-// F-block
+// f-block
+
 element(-1, 0, 90, "No", "Ac");
 element(-2, 0, 90, "Md", "Th");
 element(-3, 0, 90, "Fm", "Pr");
@@ -105,6 +109,7 @@ element(-6, 1, 90, "Tb", "Sm");
 element(-7, 1, 90, "Gd", "Eu");
 
 // Core
+
 translate([0,0,coreheight/2-(height+vspace)/2]) {
     cube([core*2, core*2, coreheight], center = true);
 }
@@ -112,6 +117,7 @@ translate([0,0,coreheight/2-(height+vspace)/2]) {
 translate([-2.5,0,coreheight/2-(height+vspace)/2]) {
     cube([core*2+2.5, core*2, coreheight], center = true);
 }
+
 c2 = (height+vspace)*4;
 translate([+2.5,0,c2/2-(height+vspace)/2]) {
     cube([core*2+2.5, core*2, c2], center = true);
@@ -121,10 +127,42 @@ c3 = (height+vspace)*6;
 translate([0,+2.5,c3/2-(height+vspace)/2]) {
     cube([core*2, core*2+2.5, c3], center = true);
 }
+
 c4 = (height+vspace)*2;
 translate([0,-2.5,c4/2-(height+vspace)/2]) {
     cube([core*2, core*2+2.5, c4], center = true);
 }
 
+// Orbital labels
 
+translate([(width+hspace)*-1.3, 0, (height+vspace)*6]) {
+    rotate([90, 0, -90]) {
+        linear_extrude(1.5) {
+            text("s", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        }
+    }
+}
 
+translate([0,(width+hspace)*3.3, (height+vspace)*5]) {
+    rotate([90,0,180]) {
+        linear_extrude(1.5) {
+            text("p", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        }
+    }
+}
+
+translate([(width+hspace)*5.3, 0, (height+vspace)*3]) {
+    rotate([90, 0, 90]) {
+        linear_extrude(1.5) {
+            text("d", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        }
+    }
+}
+
+translate([0,(width+hspace)*-7.3, (height+vspace)*1]) {
+    rotate([90,0,0]) {
+        linear_extrude(1.5) {
+            text("f", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        }
+    }
+}
