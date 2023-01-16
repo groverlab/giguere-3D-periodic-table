@@ -5,11 +5,11 @@
 
 width = 16;
 height = 16;
-depth = 10;
+depth = 8;
 vspace = 2;
 hspace = 2;
 $fn = 8;
-textheight = 1.5;
+textheight = 0.7;
 fontsize = 7;
 core = 3;
 coreheight = (height+vspace)*7;
@@ -19,7 +19,7 @@ module element(x=0, z=0, r=0, front="F", back="B") {
         translate([x*(width+hspace) + width/2+hspace/2 + sign(x+0.001)*(core+2.5), 0, z*(height+vspace)]) {
             cube([width, depth, height], center=true);
             translate([0, 0, 0]) {
-                cube([width+vspace, depth-4, height+vspace], center=true);
+                cube([width+vspace, depth-2, height+vspace], center=true);
                 }
                 rotate([90,0,0]) {
                     translate([0, 0, depth/2]) {
@@ -140,32 +140,32 @@ translate([0,-2.5,c4/2-(height+vspace)/2]) {
 
 translate([(width+hspace)*-1.3, 0, (height+vspace)*6]) {
     rotate([90, 0, -90]) {
-        linear_extrude(1.5) {
-            text("s", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        linear_extrude(textheight) {
+            text("s", 8, halign="center", valign="center", font="Liberation Sans:style=Bold");
         }
     }
 }
 
 translate([0,(width+hspace)*3.3, (height+vspace)*5]) {
     rotate([90,0,180]) {
-        linear_extrude(1.5) {
-            text("p", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        linear_extrude(textheight) {
+            text("p", 8, halign="center", valign="center", font="Liberation Sans:style=Bold");
         }
     }
 }
 
 translate([(width+hspace)*5.3, 0, (height+vspace)*3]) {
     rotate([90, 0, 90]) {
-        linear_extrude(1.5) {
-            text("d", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        linear_extrude(textheight) {
+            text("d", 8, halign="center", valign="center", font="Liberation Sans:style=Bold");
         }
     }
 }
 
 translate([0,(width+hspace)*-7.3, (height+vspace)*1]) {
     rotate([90,0,0]) {
-        linear_extrude(1.5) {
-            text("f", 10, halign="center", valign="center", font="Liberation Sans:style=Bold");
+        linear_extrude(textheight) {
+            text("f", 8, halign="center", valign="center", font="Liberation Sans:style=Bold");
         }
     }
 }
