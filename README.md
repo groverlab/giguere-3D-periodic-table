@@ -4,8 +4,8 @@ In 1966, Canadian chemist [Paul-Antoine Giguère](https://en.wikipedia.org/wiki/
 
 ![Figure from Giguère's paper](giguere_figure.png)
 
- I wondered if anyone had made a 3D-printable version of Giguère's periodic table and couldn't find one, so I made this using [OpenSCAD](https://openscad.org).  Printed successfully on my Ender 3 using 100% infill and Raft build plate adhesion.
+ I wondered if anyone had made a 3D-printable version of Giguère's periodic table and couldn't find one, so I made this using [OpenSCAD](https://openscad.org).  Printed successfully on my Ender 3 using 20% infill and Raft build plate adhesion.
 
-![v1 of my 3D-printed Giguère periodic table](v1.jpeg)
+![v2 of my 3D-printed Giguère periodic table](v2.jpeg)
 
-[^1]: Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966) [PDF](giguere-1966.pdf).
+[^1]: Paul Giguère. "The 'new look' for the periodic system." Chemistry in Canada 18 (12), 36–39 (1966) [PDF](https://github.com/wgrover/giguere-3D-periodic-table/blob/main/giguere-1966.pdf).
